@@ -1,8 +1,11 @@
 package org.trans.abelhinhaBackend.controllers;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +14,7 @@ import org.trans.abelhinhaBackend.helpers.responses.PsicologoResponse;
 import org.trans.abelhinhaBackend.services.entityServices.PsicologoService;
 
 @Controller
-@RequestMapping("api/psicologo")
+@RequestMapping("/api/psicologo")
 public class PsicologoController {
     
     private PsicologoService psicologoService;
@@ -22,10 +25,11 @@ public class PsicologoController {
 
     @PostMapping("cadastro")
     public ResponseEntity<PsicologoResponse> cadastro(@RequestBody PsicologoRequest request){
-
-        
-
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(new PsicologoResponse());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(this.psicologoService.cadastrar(request));
     }
 
+    @GetMapping("todos")
+    public ResponseEntity<List<PsicologoResponse>> todos(){
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(this.psicologoService.listarTodos());
+    }
 }

@@ -18,7 +18,7 @@ public class Psicologo {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @Column(length = 50, nullable = false)
-    private String name;
+    private String nome;
     @Column(length = 300)
     private String foto;
     @Column(length = 10, unique = true, nullable = false)
@@ -54,12 +54,12 @@ public class Psicologo {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getFoto() {

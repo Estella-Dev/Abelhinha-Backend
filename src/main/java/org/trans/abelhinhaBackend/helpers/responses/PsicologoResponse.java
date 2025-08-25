@@ -9,7 +9,7 @@ public class PsicologoResponse {
     private String foto;
     private String descricao;
     private String crp;
-    private String preco;
+    private Double preco;
     private Boolean atendeOnline;
     private String estado;
     private String cidade;
@@ -59,11 +59,11 @@ public class PsicologoResponse {
         this.crp = crp;
     }
 
-    public String getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 

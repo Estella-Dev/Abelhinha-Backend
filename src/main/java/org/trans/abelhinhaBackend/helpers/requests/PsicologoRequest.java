@@ -7,7 +7,7 @@ public record PsicologoRequest(
     String foto,
     String descricao,
     @NotBlank(message = "O CRP é obrigatório") String crp,
-    String preco,
+    Double preco,
     @NotBlank(message = "Marque sim ou não para atendimento online") Boolean atendeOnline,
     String estado,
     String cidade,
